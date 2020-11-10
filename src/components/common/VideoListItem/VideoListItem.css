@@ -1,0 +1,27 @@
+.video-list-item{
+  display: flex;
+  max-width: 40rem;
+  border-bottom: 1px solid silver;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+
+.video-list-item__name{
+  width: 70%;
+}
+
+.video-list-item__duration{
+  width: 15%;
+  text-align: center;
+}
+
+.video-list-item__size{
+  width: 15%;
+  text-align: right;
+}
+
+@media screen and (max-width: 40rem) {
+  .video-list-item{
+    width: 100%;
+  }
+}

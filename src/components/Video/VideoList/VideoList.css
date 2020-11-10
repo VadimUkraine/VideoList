@@ -1,0 +1,33 @@
+.video-list-block{
+  width: 40rem;
+  margin: 0 auto;
+}
+
+.video-list-header{
+  border-bottom: 1px solid grey;
+  display: flex;
+  max-width: 40rem;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+
+.video-list-header__name{
+  width: 70%;
+
+}
+.video-list-header__duration{
+  width: 15%;
+  text-align: right;
+}
+
+.video-list-header__size{
+  width: 15%;
+  text-align: right;
+}
+
+
+@media screen and (max-width: 40rem) {
+  .video-list-block{
+    width: 100%;
+  }
+}

@@ -1,0 +1,22 @@
+.video-wrapper{
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.upload-link{
+  margin: 10px auto;
+  text-decoration: none;
+  border: 2px solid grey;
+  color: black;
+  border: 0;
+  border-bottom: 2px solid grey;  
+}
+
+.upload-link:hover{
+  opacity: 0.65;
+}

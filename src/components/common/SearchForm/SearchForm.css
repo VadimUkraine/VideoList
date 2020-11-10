@@ -1,0 +1,28 @@
+.form-group{
+  display: flex;
+  justify-content: space-between;
+  min-width: 18.75rem;
+  max-width: 20rem;
+  margin: 0 auto;
+}
+
+.text-input{
+  width: 75%;
+  height: 1.2rem;
+  border: 0;
+  outline: none;
+  border-bottom: 2px solid gainsboro;
+}
+
+.search-clear-btn{
+  height: 1.5rem;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid grey;
+}
+
+.search-clear-btn:hover{
+  opacity: 0.65;
+}
