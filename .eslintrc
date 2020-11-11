@@ -3,8 +3,11 @@
     "no-unused-vars": "warn",
     "linebreak-style": 0,
     "padded-blocks": 0,
-    "no-console": "warn"
+    "no-console": "warn",
+    "import/no-named-as-default": "warn",
+    "import/no-named-as-default-member": "warn",
   },
+  "parser": "babel-eslint",
   "settings": {
     "react": {
       "version": "detect"
@@ -18,7 +21,7 @@
     "airbnb-base",
     "eslint:recommended",
     "plugin:react/recommended",  
-    "plugin:react-hooks/recommended"
+    "plugin:react-hooks/recommended",
   ]
 }
 

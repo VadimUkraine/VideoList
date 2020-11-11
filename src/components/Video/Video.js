@@ -1,32 +1,34 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { searchVideosRequest, getVideosRequest } from '../../redux/actions/video';
 import SearchForm from '../common/SearchForm';
 import VideoList from './VideoList';
 import './Video.css';
 
 const Video = () => {
 
-  const [search, setSearch] = useState('');
+  const [searchText, setSearchText] = useState('');
   const list = useSelector((state) => state.video.list);
+  const dispatch = useDispatch();
 
-  const handleSearch = (text) => {
-    setSearch(text);
+  useEffect(() => {
+    dispatch(getVideosRequest());
+  }, [dispatch]);
+
+  const handleInputText = (text) => {
+    setSearchText(text);
   };
 
-  const videos = useMemo(() => {
-    if (!search.length) {
-      return list;
-    }
-
-    return list.filter((item) => item.name.includes(search));
-  }, [search, list]);
+  const handleSearch = () => {
+    dispatch(searchVideosRequest(searchText));
+  };
 
   return (
     <div className="video-wrapper">
-      <SearchForm onSearch={handleSearch} search={search} />
+      <SearchForm onSearch={handleSearch} onInputText={handleInputText} text={searchText} />
       <Link to="/upload" className="upload-link"> Want to upload a file?</Link>
-      <VideoList videos={videos}/>
+      <VideoList videos={list}/>
     </div>
   );
 };

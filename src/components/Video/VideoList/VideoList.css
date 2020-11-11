@@ -12,19 +12,14 @@
 }
 
 .video-list-header__name{
-  width: 70%;
+  width: 85%;
 
-}
-.video-list-header__duration{
-  width: 15%;
-  text-align: right;
 }
 
 .video-list-header__size{
   width: 15%;
   text-align: right;
 }
-
 
 @media screen and (max-width: 40rem) {
   .video-list-block{

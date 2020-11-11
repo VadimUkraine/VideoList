@@ -58,3 +58,17 @@
   color:blue;
   border-color: blue;
 }
+
+.file-upload-success{
+  margin-top: 10px;
+  color: blue;
+  text-align: center;
+  font-weight: 600;
+}
+
+.file-upload-error{
+  margin-top: 10px;
+  color:red;
+  text-align: center;
+  font-weight: 600;
+}

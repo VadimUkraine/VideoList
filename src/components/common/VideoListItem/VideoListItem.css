@@ -7,12 +7,7 @@
 }
 
 .video-list-item__name{
-  width: 70%;
-}
-
-.video-list-item__duration{
-  width: 15%;
-  text-align: center;
+  width: 85%;
 }
 
 .video-list-item__size{

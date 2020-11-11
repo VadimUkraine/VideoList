@@ -7,6 +7,10 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-graphql": "^0.11.0",
+    "graphql": "^15.4.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -21,7 +25,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "nodemon --watch ./server ./server/server.js",
+    "client": "concurrently \"npm run server\" \"npm run start\"",
+    "prod-server": "node ./server/server.js",
+    "prod": "concurrently \"npm run prod-server\" \"npm run build\""
   },
   "eslintConfig": {
     "extends": [
@@ -42,12 +50,15 @@
     ]
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "concurrently": "^5.3.0",
     "eslint": "^7.13.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^4.3.0",
-    "lint-staged": "^10.5.1"
+    "lint-staged": "^10.5.1",
+    "nodemon": "^2.0.6"
   },
   "lint-staged": {
     "*.{js,jsx}": "eslint --max-warnings=-1"

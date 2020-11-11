@@ -8,6 +8,7 @@ import {
   SEARCH_VIDEOS_REQUEST,
   SEARCH_VIDEOS_REQUEST_SUCCESS,
   SEARCH_VIDEOS_REQUEST_FAILURE,
+  SET_FILE_SAVED,
 } from '../../constants/video';
 
 export const getVideosRequest = () => ({ type: GET_VIDEOS_REQUEST });
@@ -26,7 +27,7 @@ export const saveVideosRequest = (video) => ({
 
 export const saveVideosRequestSuccess = () => ({ type: SAVE_VIDEOS_REQUEST_SUCCESS });
 
-export const saveVideosRequestFailure = () => ({ SAVE_VIDEOS_REQUEST_FAILURE });
+export const saveVideosRequestFailure = () => ({ type: SAVE_VIDEOS_REQUEST_FAILURE });
 
 export const searchVideosRequest = (text) => ({
   type: SEARCH_VIDEOS_REQUEST,
@@ -38,4 +39,6 @@ export const searchVideosRequestSuccess = (videos) => ({
   payload: { videos },
 });
 
-export const searchVideosRequestFailure = () => ({ SEARCH_VIDEOS_REQUEST_FAILURE });
+export const searchVideosRequestFailure = () => ({ type: SEARCH_VIDEOS_REQUEST_FAILURE });
+
+export const setFiledSaved = () => ({ type: SET_FILE_SAVED });
