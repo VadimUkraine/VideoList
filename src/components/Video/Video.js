@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { searchVideosRequest, getVideosRequest } from '../../redux/actions/video';
@@ -8,7 +8,6 @@ import './Video.css';
 
 const Video = () => {
 
-  const [searchText, setSearchText] = useState('');
   const list = useSelector((state) => state.video.list);
   const dispatch = useDispatch();
 
@@ -16,18 +15,14 @@ const Video = () => {
     dispatch(getVideosRequest());
   }, [dispatch]);
 
-  const handleInputText = (text) => {
-    setSearchText(text);
-  };
-
-  const handleSearch = () => {
+  const handleSearch = (searchText) => {
     dispatch(searchVideosRequest(searchText));
   };
 
   return (
     <div className="video-wrapper">
-      <SearchForm onSearch={handleSearch} onInputText={handleInputText} text={searchText} />
-      <Link to="/upload" className="upload-link"> Want to upload a file?</Link>
+      <SearchForm onSearch={handleSearch} />
+      <Link to="/upload" className="upload-link">Want to upload a file?</Link>
       <VideoList videos={list}/>
     </div>
   );

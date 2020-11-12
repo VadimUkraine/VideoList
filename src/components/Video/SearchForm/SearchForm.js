@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './SearchForm.css';
 
-const SearchForm = ({ onSearch, onInputText, text }) => {
+const SearchForm = ({ onSearch }) => {
+
+  const [searchText, setSearchText] = useState('');
 
   const handleChange = (e) => {
-    onInputText(e.target.value);
+    setSearchText(e.target.value);
+  };
+
+  const handleSearch = () => {
+    onSearch(searchText);
   };
 
   return (
@@ -13,13 +19,13 @@ const SearchForm = ({ onSearch, onInputText, text }) => {
       <input
         type="text"
         name="videoSearch"
-        placeholder="Search..."
+        placeholder="Type video name here"
         id="videoSearch"
         className="text-input"
         onChange={handleChange}
-        value={text}
+        value={searchText}
       />
-      <button type="button" className="search-clear-btn" onClick={onSearch}>
+      <button type="button" className="search-btn" onClick={handleSearch}>
         Search
       </button>
     </div>
@@ -30,6 +36,4 @@ export default SearchForm;
 
 SearchForm.propTypes = {
   onSearch: PropTypes.func.isRequired,
-  onInputText: PropTypes.func.isRequired,
-  text: PropTypes.string.isRequired,
 };

@@ -9,7 +9,7 @@ const VideoList = ({ videos }) => (
         <p className="video-list-header__name">Name</p>
         <p className="video-list-header__size">Size</p>
       </div>
-      {videos.map((item, index) => (<VideoListItem key={index} video={item} />))}
+      {videos.map((item) => (<VideoListItem key={item.id} video={item} />))}
     </div>
 );
 
