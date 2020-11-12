@@ -1,3 +1,21 @@
+# To run the FE and BE simultaneously in develop mode - you need to type the command - npm run client
+# To run the FE and BE simultaneously in build mode - you need to type the command - npm run prod
+
+# About project structure
+
+src - main folder for FE
+
+components - contains components that are used in the project
+
+global - here we store images, styles, video, audio files, api files, hoc, hooks, error handlers, utilities that can be used throughout the project
+
+redux - contains actions, sagas, reducers, store of the project
+
+server - main folder for BE
+
+FE made with CRA, so below is the description of commands that can be used
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
