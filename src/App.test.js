@@ -6,16 +6,12 @@ import configureStore from './redux/store';
 
 const store = configureStore();
 
-test('check renders Component and Search button', () => {
-  render(<Provider store={store}>
-            <App />
-          </Provider>);
-  expect(screen.getByRole('button', { name: 'Search' })).toBeInTheDocument();
-});
+beforeEach(() => render(
+  <Provider store={store}>
+     <App />
+  </Provider>,
+));
 
-test('Snapshot of component', () => {
-  const tree = render(<Provider store={store}>
-    <App />
-  </Provider>);
-  expect(tree).toMatchSnapshot();
+test('it renders component', () => {
+  expect(screen.getByRole('button', { name: 'Search' })).toBeInTheDocument();
 });
