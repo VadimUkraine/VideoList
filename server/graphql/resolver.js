@@ -1,16 +1,20 @@
+const { GraphQLUpload } = require('graphql-upload');
 const videos = require('../db/videos');
 
 module.exports = {
+
+  Upload: GraphQLUpload,
 
   getVideos() {
     return videos;
   },
 
-  saveVideo({ video }) {
+  saveFile({ video }) {
     const newVideo = {
       id: video.id,
       name: video.name,
       size: video.size,
+      type: video.type,
     };
     videos.push(newVideo);
     return true;

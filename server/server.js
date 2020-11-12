@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const { graphqlHTTP } = require('express-graphql');
+const { graphqlUploadExpress } = require('graphql-upload');
 const cors = require('cors');
 const schema = require('./graphql/schema');
 const resolver = require('./graphql/resolver');
@@ -20,11 +21,13 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/graphql', graphqlHTTP({
-  schema,
-  rootValue: resolver,
-  graphiql: true,
-}));
+app.use('/graphql',
+  graphqlUploadExpress({ maxFileSize: 10000000, maxFiles: 1 }),
+  graphqlHTTP({
+    schema,
+    rootValue: resolver,
+    graphiql: true,
+  }));
 
 async function start() {
   try {

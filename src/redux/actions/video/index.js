@@ -20,9 +20,9 @@ export const getVideosRequestSuccess = (videos) => ({
 
 export const getVideosRequestFailure = () => ({ type: GET_VIDEOS_REQUEST_FAILURE });
 
-export const saveVideosRequest = (video) => ({
+export const saveVideosRequest = (file) => ({
   type: SAVE_VIDEOS_REQUEST,
-  payload: { video },
+  payload: { file },
 });
 
 export const saveVideosRequestSuccess = () => ({ type: SAVE_VIDEOS_REQUEST_SUCCESS });

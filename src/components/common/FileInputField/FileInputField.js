@@ -25,7 +25,7 @@ const FileInputField = () => {
   };
 
   const handleUpload = () => {
-    dispatch(saveVideosRequest());
+    dispatch(saveVideosRequest(file));
   };
 
   return (
