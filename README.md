@@ -1,6 +1,6 @@
 To run the FE and BE simultaneously in develop mode - you need to type the command:
 # npm run client
-To run the FE and BE simultaneously in build mode - you need to type the command"
+To run the FE and BE simultaneously in build mode - you need to type the command:
 # npm run prod
 
 # About project structure
