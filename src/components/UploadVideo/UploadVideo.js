@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import FileInputField from '../common/FileInputField';
+import FileInputField from './FileInputField';
 import './UploadVideo.css';
 
 const UploadVideo = () => (

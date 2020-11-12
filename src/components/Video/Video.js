@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { searchVideosRequest, getVideosRequest } from '../../redux/actions/video';
-import SearchForm from '../common/SearchForm';
+import SearchForm from './SearchForm';
 import VideoList from './VideoList';
 import './Video.css';
 
